@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+class bankAccount {
+private:
+    double balance;
+
+public:
+    // Constructor to initialize balance
+    bankAccount() {
+        balance = 0.0;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+    }
+
+    void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        } else {
+            cout << "Insufficient funds." << endl;
+        }
+    }
+
+    void displayBalance() {
+        cout << "Current Balance: $" << balance << endl;
+    }
+};
